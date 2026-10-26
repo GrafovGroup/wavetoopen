@@ -85,3 +85,7 @@ The owner selected concept 04: architectural letterforms, charcoal Wave/Open and
 
 ## Final logo selection — rounded option 03
 The owner corrected the choice to option 03, with rounded bold lettering. Use `public/assets/logo-rounded.webp` in the header and footer. This supersedes the architectural option 04 selection above. Preserve the red emblem, charcoal/red header lettering and white footer lettering.
+
+
+## Confirmed final choice — architectural option 04
+The owner switched back to the preceding architectural logo. Use `public/assets/logo-architectural.webp` in the header and footer. This supersedes the rounded option 03 instruction above.

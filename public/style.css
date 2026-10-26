@@ -139,12 +139,12 @@ html[lang=fr-CA] .service-hero h1{font-size:clamp(36px,4vw,58px)}
  .language-switch{gap:4px}
  .language-switch>a{min-width:26px}
 }
-/* Selected rounded wordmark, option 03. */
+/* Selected architectural wordmark, option 04. */
 .brand{flex-shrink:0}
 .brand-art{display:block;position:relative;width:250px;line-height:0}
 .brand .brand-art img{width:100%;height:auto}
 footer .brand-art{width:245px;max-width:100%}
-footer .brand-art::after{content:'';position:absolute;inset:0;background:#fff;mask:url('/assets/logo-rounded.webp') center/contain no-repeat;clip-path:inset(0 0 0 18%)}
+footer .brand-art::after{content:'';position:absolute;inset:0;background:#fff;mask:url('/assets/logo-architectural.webp') center/contain no-repeat;clip-path:inset(0 0 0 18%)}
 @media(max-width:1200px) and (min-width:851px){.brand-art{width:215px}.header-inner{gap:16px}.nav{gap:16px}}
 @media(max-width:600px){.brand-art{width:220px}.header-inner{gap:12px}}
 @media(max-width:380px){.brand-art{width:180px}.header-inner{gap:10px}.menu-toggle{padding:12px}}
