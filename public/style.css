@@ -109,3 +109,21 @@ html[lang=fr-CA] .service-hero h1{font-size:clamp(36px,4vw,58px)}
 @media(max-width:850px){html[lang=fr-CA] .nav{font-size:15px;gap:0}.utility .utility-prompt{display:none}}
 @media(max-width:600px){.utility .container{gap:8px}.utility .container>span{max-width:130px;white-space:normal;font-size:8px;line-height:1.3}.language-switch{gap:7px;font-size:11px}.language-switch>a{min-width:30px;min-height:30px}.utility a{font-size:11px}html[lang=fr-CA] .hero-grid h1{font-size:38px}html[lang=fr-CA] .journey-actions{align-items:stretch;flex-direction:column}html[lang=fr-CA] .service-page-nav{gap:12px}html[lang=fr-CA] .btn{padding:14px 18px}html[lang=fr-CA] .utility .container>span{max-width:118px}}
 @media(max-width:360px){.utility .container>span{display:none}.utility .container>a{margin-left:0}.language-switch{margin-left:auto}.brand{font-size:22px;gap:8px}.brand img{width:36px;height:36px}}
+
+/* Direct repair route and clear enquiry expectations. */
+.repair-shortcut{margin-top:24px;padding-top:18px;border-top:1px solid #e5dce0}
+.repair-shortcut .text-link{font-size:14px;line-height:1.5;max-width:100%;white-space:normal}
+.enquiry-steps{padding-left:24px;margin:24px 0 0}
+.enquiry-steps li{padding-left:7px;margin-bottom:20px}
+.enquiry-steps li::marker{color:#bd2336;font-weight:700}
+.enquiry-steps strong{font-size:17px}
+.enquiry-steps p{margin:6px 0 0;font-size:16px;line-height:1.6}
+.utility .container>.utility-region{display:none}
+@media(max-width:600px){
+ .utility .container{flex-wrap:nowrap;min-height:46px}
+ .utility .container>.utility-tagline{display:none}
+ .utility .container>.utility-region{display:block;white-space:nowrap;font-size:10px;line-height:1;max-width:none;flex-shrink:0}
+ .utility .container>a{margin-left:auto}
+ .language-switch{flex-shrink:0;white-space:nowrap;margin-left:0}
+}
+@media(max-width:360px){.closing .actions{width:100%}.closing .actions .btn{flex-basis:100%;min-width:0}}

@@ -77,7 +77,7 @@ const submitEnquiry=async(withoutAttachments=false)=>{
   }
   window.dispatchEvent(new CustomEvent('wavetoopen:conversion',{detail:{event:'quote_accepted',request:form.elements.request.value,projectType:form.elements.projectType.value}}));
   withoutFilesButton.hidden=true;
-  form.dataset.dirty='false';show(t('Thank you. Your enquiry has been accepted for delivery.')+(withoutAttachments?t(' Attachments were not sent.'):'')+t(' Keep a copy for your records. This does not confirm a booking or price.'));
+  form.dataset.dirty='false';show(t('Thank you. Your enquiry has been accepted for delivery.')+(withoutAttachments?t(' Attachments were not sent.'):'')+t(' We’ll review your details and contact you about the next step. Keep a copy for your records. This does not confirm a booking or price.'));
  }catch(err){show((err.name==='TimeoutError'?t('Delivery could not be confirmed before the connection timed out.'):(french&&!Object.values(window.WTO_FR||{}).includes(err.message)?t('We could not confirm delivery.'):err.message))+t(' Your entries are still here. Save a copy, retry later, or call (833) 696-9996.'),true)}
  finally{sending=false;button.disabled=false;withoutFilesButton.disabled=false;button.innerHTML=t('Send enquiry')+' <span aria-hidden="true">↗</span>'}
 };
