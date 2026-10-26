@@ -148,3 +148,21 @@ footer .brand-art::after{content:'';position:absolute;inset:0;background:#fff;ma
 @media(max-width:1200px) and (min-width:851px){.brand-art{width:215px}.header-inner{gap:16px}.nav{gap:16px}}
 @media(max-width:600px){.brand-art{width:220px}.header-inner{gap:12px}}
 @media(max-width:380px){.brand-art{width:180px}.header-inner{gap:10px}.menu-toggle{padding:12px}}
+
+/* Readable actions and compact bilingual mobile controls. */
+.btn,.text-link,.related-services .link-row,.service-page-nav a,.save-copy,.file-fallback,.demo-play,.form-fields input::file-selector-button{text-transform:none;letter-spacing:0}
+.nav>.btn{text-transform:uppercase;letter-spacing:.035em}
+@media(max-width:600px){
+ .utility .container{width:calc(100% - 16px);gap:5px}
+ .utility .container>.utility-region{font-size:11px;line-height:1.3}
+ html[lang=fr-CA] .utility .container>.utility-region{font-size:10px}
+ .utility .container>a{font-size:11px}
+ .language-switch>span{display:none}
+ .language-switch{gap:0;font-size:11px}
+ .language-switch>a{min-width:30px;min-height:32px;padding:0 4px;display:flex;align-items:center;justify-content:center}
+ .mobile-bar{grid-template-columns:1fr 1.4fr;padding:6px 10px calc(6px + env(safe-area-inset-bottom));gap:8px}
+ .mobile-bar .btn,html[lang=fr-CA] .mobile-bar .btn{min-height:44px;padding:9px 12px;font-size:14px;line-height:1.3;gap:10px;white-space:nowrap}
+ .mobile-bar .btn span{display:none}
+ .journey-actions .btn,.journey-actions .text-link{line-height:1.4}
+}
+@media(max-width:360px){.utility .container>a{font-size:10px}.utility .container>.utility-region{font-size:10px}html[lang=fr-CA] .utility .container>.utility-region{font-size:9.5px}}
