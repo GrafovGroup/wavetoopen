@@ -1,0 +1,18 @@
+{
+  "method": "Built-in image generation",
+  "date": "2026-10-26",
+  "prompts": [
+    {
+      "asset": "public/assets/touchless-entry-{640,1280}.webp",
+      "prompt": "Photorealistic commercial architecture photograph for a Canadian touchless door company website. Landscape 3:2. Bright modern office vestibule, full glass swing door in aluminum frame partly open, correctly mounted overhead low energy swing door operator with articulated arm, small rectangular brushed steel touchless activation sensor on adjacent solid wall. Foreground adult hand hovering a few inches in front of sensor, plausible anatomy; rest of person outside crop. Natural daylight, believable reflections, understated burgundy interior accent, crisp realistic hardware and architectural detail. No logos, watermarks, captions or readable text. Not futuristic, not a rendering."
+    },
+    {
+      "asset": "public/assets/washroom-entry-{640,1280}.webp",
+      "prompt": "Photorealistic architectural editorial photograph, landscape 3:2. Modern commercial accessible single-user washroom entrance viewed from corridor, wide warm oak swing door partly open with silver overhead automatic door operator and realistic articulated arm; rectangular touchless sensor and simple occupancy indicator on adjacent wall. Inside glimpse clean white basin and stainless grab rail. Generous clear floor space, level threshold, calm porcelain tile, warm neutral natural lighting, professionally maintained facility. Realistic physical hardware, no branding, no captions, no readable text, no people. Not a render."
+    },
+    {
+      "asset": "public/assets/door-assessment-{640,1280}.webp",
+      "prompt": "Photorealistic editorial photograph landscape 3:2 for commercial automatic door service website. Skilled technician in unbranded charcoal work polo standing safely on floor inspecting a commercial glass entrance door, looking at a handheld tablet, full doorway and silver overhead operator visible, no exposed electrical parts. Bright office vestibule, believable materials, daylight, subtle burgundy accents. Candid professional scene, realistic hands and anatomy, no logos, no text, no watermarks. Not a render."
+    }
+  ]
+}

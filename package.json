@@ -1,0 +1,25 @@
+{
+  "name": "wavetoopen-ca",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:audit": "node tests/audit.cjs",
+    "test:upload": "node tests/upload-integration.mjs",
+    "test:formspree": "node tests/formspree.cjs",
+    "test:journey": "node tests/journey.cjs",
+    "test:elevation": "node tests/elevation.cjs",
+    "test:recovery": "node tests/form-recovery.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "axe-core": "4.10.3"
+  }
+}
