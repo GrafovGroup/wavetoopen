@@ -93,3 +93,19 @@
 .btn.orange{color:#fff}
 @media(max-width:600px){.journey-card>.architectural-image{margin:-26px -26px 22px}.utility .container{align-items:center;gap:8px}.utility .container>span{font-size:9px;letter-spacing:0;max-width:none;white-space:nowrap}.utility-prompt{display:none}.utility a{font-size:11px}.demo-screen{aspect-ratio:3/2}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Bilingual header and readable French labels at every breakpoint. */
+.utility .container{align-items:center;gap:16px}
+.utility .container>a{margin-left:auto}
+.language-switch{display:flex;gap:10px;align-items:center;font-size:12px;line-height:1;flex-shrink:0}
+.language-switch>a{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:32px;border:1px solid #ffffff75;border-radius:3px;color:#fff;font-weight:700}
+.language-switch>span{opacity:.75;font-weight:600}
+html[lang=fr-CA] .nav{gap:18px;font-size:12px}
+html[lang=fr-CA] .header-inner{gap:20px}
+html[lang=fr-CA] .btn{gap:18px}
+html[lang=fr-CA] .hero-grid h1{font-size:clamp(38px,4.4vw,64px)}
+html[lang=fr-CA] .service-hero h1{font-size:clamp(36px,4vw,58px)}
+@media(max-width:1100px){html[lang=fr-CA] .nav{gap:12px;font-size:11px}html[lang=fr-CA] .nav>.btn{padding:12px}}
+@media(max-width:850px){html[lang=fr-CA] .nav{font-size:15px;gap:0}.utility .utility-prompt{display:none}}
+@media(max-width:600px){.utility .container{gap:8px}.utility .container>span{max-width:130px;white-space:normal;font-size:8px;line-height:1.3}.language-switch{gap:7px;font-size:11px}.language-switch>a{min-width:30px;min-height:30px}.utility a{font-size:11px}html[lang=fr-CA] .hero-grid h1{font-size:38px}html[lang=fr-CA] .journey-actions{align-items:stretch;flex-direction:column}html[lang=fr-CA] .service-page-nav{gap:12px}html[lang=fr-CA] .btn{padding:14px 18px}html[lang=fr-CA] .utility .container>span{max-width:118px}}
+@media(max-width:360px){.utility .container>span{display:none}.utility .container>a{margin-left:0}.language-switch{margin-left:auto}.brand{font-size:22px;gap:8px}.brand img{width:36px;height:36px}}

@@ -1,6 +1,6 @@
 # WaveToOpen.ca
 
-A standalone 46-page commercial touchless-door website with direct Formspree enquiry delivery and a Node.js preview server. No runtime npm dependencies, framework hydration, database or third-party tracking scripts.
+A standalone bilingual 92-page commercial touchless-door website with direct Formspree enquiry delivery and a Node.js preview server. No runtime npm dependencies, framework hydration, database or third-party tracking scripts.
 
 ## Run
 
@@ -90,3 +90,10 @@ After building, run `python3 tests/repetition.py`. It checks main-content image 
 Google Analytics was inspected in the signed-in Grafov Group account. No WaveToOpen property was found. The new-property wizard is prepared with WaveToOpen, Toronto time and CAD, but Google requires an employee-count selection before creation. No new property or external analytics tag was installed. Existing phone-click and confirmed-enquiry events remain ready for connection.
 
 Enable Formspree file uploads for form `xrpgdwzz` and confirm the receiving inbox, then repeat the labelled attachment test with the owner’s authorization. Obtain owned installation photos/video, approved project details, authentic reviews and verified credentials before adding portfolio proof.
+
+
+## English and Canadian French
+
+The build emits 46 content pages per language, plus localized error pages. English URLs remain stable; French pages live under `/fr/` with localized route names. `src/localization.mjs` applies `src/translations.fr.json` at build time and rejects missing content translations. Dynamic form messages use `src/runtime.fr.json`. Translate new text and add a route mapping when adding a page. The language switch preserves URL query parameters and warns before discarding an edited enquiry. Personal form entries are not stored in the browser.
+
+Run `npm run build && npm test` after content changes. `python tests/static-audit.py` checks generated links, anchors, assets, headings, and image alternative-text attributes. French select labels preserve stable integration values; submissions include language and originating page. Search alternates and sitemap include both locales.

@@ -1,3 +1,4 @@
+import {localizePages,writeFrenchSVGs,sitemap} from './src/localization.mjs';
 import {heroDemo} from './src/hero-demo.mjs';
 import {servicePhotos,servicePage} from './src/service-layout.mjs';
 import {locationProfiles,canadianRegions} from './src/location-content.mjs';
@@ -7,7 +8,7 @@ import {architecturalImages,heroImages,architecturalPhoto} from './src/architect
 import {diagrams} from './src/unique-visuals.mjs';
 import {extraArt,visualNotes} from './src/imagery.mjs';
 import {quoteForm} from './src/forms.mjs';
-import {mkdir,writeFile,cp,rm} from 'node:fs/promises';
+import {mkdir,writeFile,cp,rm,readFile} from 'node:fs/promises';
 import {services,sectors,faqs,markets,sources} from './src/content.mjs';
 const origin=(process.env.SITE_ORIGIN||'https://wavetoopen.ca').replace(/\/$/,'');const production=process.env.SITE_INDEXABLE!=='false';
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -66,6 +67,9 @@ add('/guides/','Touchless & Automatic Door Planning Guides','Practical guides to
 for(const g of guides)add(guidePath(g.slug),g.title,g.description,crumbs(g.title,'Guides')+pageHero(g.tag,g.title,g.answer)+`<section class="section wash"><div class="container article-grid guide-layout"><article class="prose"><p class="guide-byline">By WaveToOpen · Published <time datetime="2026-09-12">September 12, 2026</time></p>${g.sections.map(x=>`<section id="${x.id}"><h2>${x.heading}</h2>${x.html}</section>`).join('')}${g.references.length?`<section><h2>Manufacturer references</h2><ul class="source-list">${g.references.map(([label,href])=>`<li><a href="${href}">${label}</a></li>`).join('')}</ul></section>`:''}<nav class="guide-next" aria-label="More planning guides"><h2>Continue planning</h2>${g.related.map(slug=>{const x=guides.find(g=>g.slug===slug);return link(x.label,guidePath(slug))}).join('')}</nav></article><aside>${architecturalPhoto(servicePhotos[g.services[0]]||'planning-library')}<nav class="aside-box guide-toc" aria-label="On this page"><h2>On this page</h2>${g.sections.map(x=>`<a href="#${x.id}">${x.heading}</a>`).join('')}</nav><div class="aside-box service-guide"><span class="eyebrow">Relevant services</span>${g.services.map(slug=>link(services.find(x=>x.slug===slug).name,url(slug))).join('')}${btn('Discuss your project','/quote/?service='+g.services[0])}</div></aside></div></section>`,{parent:'Guides',article:g,modified:'2026-09-12'});
 add('/404/','Page not found','The requested WaveToOpen page could not be found. Browse commercial door services or return to the homepage.',pageHero('404 / Page not found','This door leads<br>somewhere else.','The page you requested is not here. Explore our services or return to the homepage.')+`<div class="container" style="padding-bottom:60px"><div class="actions">${btn('Explore services','/services/')}${btn('Back to home','/','outline')}</div></div>`,{noindex:true});
 await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});await cp('public','dist',{recursive:true});
-for(let p of pages){p.html=p.html.replace(/(\/assets\/[^\s"<>]+\.(?:svg|webp|jpg))(?=[\s"])/g,'$1?v=visuals-20261026');let dir='dist'+p.path;await mkdir(dir,{recursive:true});await writeFile(dir+'index.html',p.html)}await writeFile('dist/404.html',pages.at(-1).html);
-const indexed=pages.filter(p=>!p.noindex);await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${indexed.map(p=>`<url><loc>${origin+p.path}</loc>${p.modified?`<lastmod>${p.modified}</lastmod>`:''}</url>`).join('')}</urlset>`);
-await writeFile('dist/robots.txt',production?`User-agent: *\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`:'User-agent: *\nDisallow: /\n');await mkdir('work',{recursive:true});await writeFile('work/routes.json',JSON.stringify(pages.map(({html,...p})=>p),null,2));console.log(`Built ${pages.length-1} content pages + 404. Indexing: ${production?'enabled':'disabled for preview'}.`);
+await writeFile('dist/i18n-fr.js','window.WTO_FR='+await readFile('src/runtime.fr.json','utf8')+';');
+const localizedPages=localizePages(pages,origin);
+await writeFrenchSVGs();
+for(let p of localizedPages){p.html=p.html.replace(/(\/assets\/[^\s"<>]+\.(?:svg|webp|jpg))(?=[\s"])/g,'$1?v=visuals-20261026');let dir='dist'+p.path;await mkdir(dir,{recursive:true});await writeFile(dir+'index.html',p.html)}await writeFile('dist/404.html',localizedPages.find(p=>p.path==='/404/').html);
+await writeFile('dist/sitemap.xml',sitemap(localizedPages,origin));
+await writeFile('dist/robots.txt',production?`User-agent: *\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`:'User-agent: *\nDisallow: /\n');await mkdir('work',{recursive:true});await writeFile('work/routes.json',JSON.stringify(localizedPages.map(({html,...p})=>p),null,2));console.log(`Built ${localizedPages.length-2} bilingual content pages + two 404 routes. Indexing: ${production?'enabled':'disabled for preview'}.`);
