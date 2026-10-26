@@ -81,3 +81,7 @@ The About page may state that WaveToOpen is a Grafov Group brand, as verified on
 
 ## Selected architectural wordmark — 26 October 2026
 The owner selected concept 04: architectural letterforms, charcoal Wave/Open and burgundy To with a waving-hand emblem. `public/assets/logo-architectural.webp` is the optimized transparent website asset prepared from the selected image-generation concept. Header uses the colour lockup; footer uses a white lettering mask over the same geometry, retaining the coloured emblem. Keep the existing hand favicon. This replaces the earlier system-font wordmark.
+
+
+## Final logo selection — rounded option 03
+The owner corrected the choice to option 03, with rounded bold lettering. Use `public/assets/logo-rounded.webp` in the header and footer. This supersedes the architectural option 04 selection above. Preserve the red emblem, charcoal/red header lettering and white footer lettering.
