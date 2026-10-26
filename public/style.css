@@ -127,3 +127,15 @@ html[lang=fr-CA] .service-hero h1{font-size:clamp(36px,4vw,58px)}
  .language-switch{flex-shrink:0;white-space:nowrap;margin-left:0}
 }
 @media(max-width:360px){.closing .actions{width:100%}.closing .actions .btn{flex-basis:100%;min-width:0}}
+@media(max-width:600px){
+ .utility .container{width:calc(100% - 24px);gap:6px}
+ .utility .container>.utility-region{font-size:9px;letter-spacing:0}
+ html[lang=fr-CA] .utility .container>.utility-region{max-width:none}
+}
+@media(max-width:380px){
+ .utility .container{gap:4px}
+ .utility .container>.utility-region{font-size:8px}
+ .utility a,.language-switch{font-size:10px}
+ .language-switch{gap:4px}
+ .language-switch>a{min-width:26px}
+}
